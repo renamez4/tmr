@@ -1,0 +1,254 @@
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body styles */
+body {
+  background: url(/image/van.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Navigation styles */
+nav {
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  box-shadow: 0 0 10px black;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Adjusted background color */
+}
+
+/* Logo styles */
+.logo {
+  font-size: 2em;
+  user-select: none;
+  color: whitesmoke;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Menu styles */
+.menu .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.menu .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.menu .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.menu .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.menu a {
+  position: relative;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-left: 40px;
+  width: 100%;
+  color: whitesmoke;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: wheat;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.menu a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Dropdown styles */
+.dropdown-food .dropdown-content-food {
+  display: none;
+}
+.herbs-dropdown .herbs-dropdown-content-herb {
+  display: none;
+}
+
+.dropdown-content-food a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content-food a:hover {
+  background-color: #ddd;
+  /* transition: transform 0.5s; */
+}
+
+.dropdown-food:hover .dropdown-content-food {
+  display: block;
+  transition: transform 0.5s;
+}
+.herbs-dropdown:hover .herbs-dropdown-content-herb {
+  display: block;
+}
+
+/* Profile styles */
+.profile-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+  margin-left: 10px;
+}
+
+.profile-info {
+  display: inline-block;
+  margin-left: 10px;
+  color: whitesmoke;
+}
+
+/* Container styles */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: rgba(8, 17, 20, 0.623);
+}
+
+/* About section styles */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px auto;
+  box-shadow: 0 0 10px gainsboro;
+  border: 2px solid gainsboro;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(8, 17, 20, 0.623);
+}
+
+.about-img {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(8, 17, 20, 0.623);
+  box-shadow: 0 0 10px gainsboro;
+  border: 2px solid gainsboro;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: 0.5s ease;
+  border-radius: 10px;
+}
+
+.about-img:hover img {
+  transform: scale(1.2);
+}
+
+.about-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.about-content h1 {
+  font-size: 23px;
+  margin-bottom: 15px;
+  color: whitesmoke;
+  border-bottom: 2px solid tan;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.about-content h2 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: white; /* Adjusted color */
+  text-align: center;
+}
+
+/* ปรับแต่งเพื่อให้แสดงผลเป็นรูปแบบแนวนอน */
+.about-content p {
+  display: inline-block; /* เปลี่ยนเป็น inline-block */
+  vertical-align: top; /* จัดให้กล่องแนวนอนอยู่ด้านบน */
+  /* width: calc(30% - 20px); ปรับความกว้างเพื่อทำการเว้นระยะห่าง */
+  margin-right: 20px; /* เพิ่มระยะขวาเพื่อทำการเว้นระยะห่าง */
+  margin-bottom: 20px; /* เพิ่มระยะล่างเพื่อทำการเว้นระยะห่าง */
+  text-align: left;
+  white-space: pre-line;
+  color: whitesmoke;
+}
+
+/* ปรับแต่งสีพื้นหลังและขอบของกล่อง */
+.about-content p {
+  /* background-color: rgba(8, 17, 20, 0.8);  */
+  border: 2px solid gainsboro; /* เปลี่ยนสีขอบ */
+  padding: 15px; /* ปรับระยะห่างของเนื้อหาในกล่อง */
+  border-radius: 10px; /* ปรับขอบมน */
+}
+
+/* ปรับแต่งเวลา hover */
+.about-content p:hover {
+  background-color: rgba(8, 17, 20, 0.9); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+  box-shadow: 0 0 10px rgba(173, 216, 230, 0.6); /* เพิ่มเงาเมื่อ hover */
+}
+
+/* ปรับแต่งการเปลี่ยนขนาดของรูป */
+.about-img:hover img {
+  transform: scale(1.05); /* เพิ่มการเล็กให้รูปเมื่อ hover */
+}
+
+.about-content .read-more {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: green;
+  color: white;
+  font-size: 1em;
+  text-decoration: none;
+  border-radius: 25px;
+  margin-top: 1px;
+  transition: 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.about-content .read-more:hover {
+  background-color: sandybrown;
+}
