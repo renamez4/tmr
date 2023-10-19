@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/assetss/css/list.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/list.css') }}">
+
+
+    <title>พริกชี้ฟ้าแดง</title>
+</head>
+
+<body>
+
+    <nav>
+        <img src="{{ url_for('static', filename='image/Logo.jpg') }}">
+        <div class="menu">
+            <a href="/Home">Home</a>
+            <li class="dropdown">
+                <a href="#">Menu</a>
+                <ul class="dropdown-content">
+                    <li class="herbs-dropdown">
+                        <a href="#">รายการสมุนไพร</a>
+                        <ul class="herbs-dropdown-content-herb">
+                            <li><a href="/รายการสมุนไพร">สมุนไพรทั้งหมด</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-food">
+                        <a href="#">หมวดหมู่เมนูอาหาร</a>
+                        <ul class="dropdown-content-food">
+                            <li><a href="/nameofmenu">เมนูทั้งหมด</a></li>
+                            <li><a href="/menupad">เมนูผัด</a></li>
+                            <li><a href="/menuyum">เมนูยำ</a></li>
+                            <li><a href="/menuRoasted">เมนูคั่ว</a></li>
+                            <li><a href="/menutod">เมนูทอด</a></li>
+                            <li><a href="/menuSteamed">เมนูนึ่ง</a></li>
+                            <li><a href="/menuphla">เมนูพล่า</a></li>
+                            <li><a href="/menugrill">เมนูย่าง</a></li>
+                            <li><a href="/menumixed">เมนูคลุก</a></li>
+                            <li><a href="/menutom">เมนูต้ม</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <a href="/about">About</a>
+        </div>
+        <div class="profile">
+            <img src="{{ url_for('static', filename='image/CWA.jpg') }}">
+            <div class="profile-info">
+                <p>User</p>
+                <p>Account</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- พริกชี้ฟ้าแดง -->
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='image/พริกชี้ฟ้าแดง.jpg') }}">
+            </div>
+            <div class="about-content">
+                <h1>41. พริกชี้ฟ้าแดง</h1>
+                <p>1. ช่วยแก้กระษัย (เมล็ด)
+                    2. ช่วยลดอาการหวัด คัดจมูก (ผล)
+                    3. ช่วยขับเสมหะ (ผล)
+                    4. ช่วยแก้อาเจียน (ผล)
+                    5. เป็นยาระบายอ่อนๆ (ผล)
+                    6. ช่วยรักษาแผลไฟไหม้ น้ำร้อนลวก (เมล็ด)
+                    7. ช่วยแก้หิด กลาก เกลื้อน (ผล)
+                    8. ช่วยยับยั้งจุลินทรีย์บางชนิด (ผล)
+                    9. ช่วยทำให้เจริญอาหาร บำรุงธาตุในร่างกาย (ผล, เมล็ด)
+                    10. ช่วยเร่งการย่อยสลาย ขับเหงื่อ ลดนน้ำหนัก (ผล)
+            </div>
+        </section>
+    </div>
+
+
+
+</body>
+
+</html>

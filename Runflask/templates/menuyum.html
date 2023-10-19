@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/assetss/css/list.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/list.css') }}">
+
+    <title>เมนูยำ</title>
+</head>
+
+<body>
+
+    <nav>
+        <img src="{{ url_for('static', filename='image/Logo.jpg') }}">
+        <div class="menu">
+            <a href="/Home">Home</a>
+            <li class="dropdown">
+                <a href="#">Menu</a>
+                <ul class="dropdown-content">
+                    <li class="herbs-dropdown">
+                        <a href="#">รายการสมุนไพร</a>
+                        <ul class="herbs-dropdown-content-herb">
+                            <li><a href="/รายการสมุนไพร">สมุนไพรทั้งหมด</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-food">
+                        <a href="#">หมวดหมู่เมนูอาหาร</a>
+                        <ul class="dropdown-content-food">
+                            <li><a href="/nameofmenu">เมนูทั้งหมด</a></li>
+                            <li><a href="/menupad">เมนูผัด</a></li>
+                            <li><a href="/menuyum">เมนูยำ</a></li>
+                            <li><a href="/menuRoasted">เมนูคั่ว</a></li>
+                            <li><a href="/menutod">เมนูทอด</a></li>
+                            <li><a href="/menuSteamed">เมนูนึ่ง</a></li>
+                            <li><a href="/menuphla">เมนูพล่า</a></li>
+                            <li><a href="/menugrill">เมนูย่าง</a></li>
+                            <li><a href="/menumixed">เมนูคลุก</a></li>
+                            <li><a href="/menutom">เมนูต้ม</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <a href="/about">About</a>
+        </div>
+        <div class="profile">
+            <img src="{{ url_for('static', filename='image/CWA.jpg') }}">
+            <div class="profile-info">
+                <p>User</p>
+                <p>Account</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ยำไตปลา -->
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='image/taipla.jpg') }}">
+            </div>
+            <div class="about-content">
+                <h1>1. ยำไตปลา</h1>
+                <h2>ประโยชน์</h2>
+                <p>หอมแดง <a href="/หอมแดง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ตะไคร้ <a href="/ตะไคร้"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>กระเทียม <a href="/กระเทียม"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>มะขาม <a href="/มะขาม"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบโหระพา <a href="/ใบโหระพา"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>กะเพรา <a href="/กะเพรา"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ผักชีฝรั่ง <a href="/ผักชีฝรั่ง"><ion-icon name="reader"></ion-icon></i></a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ยำตะไคร้ทูน่า -->
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='image/takrai.jpg') }}">
+            </div>
+            <div class="about-content">
+                <h1>2. ยำตะไคร้ทูน่า</h1>
+                <h2>ประโยชน์</h2>
+                <p>พริกชี้ฟ้า <a href="/พริกชี้ฟ้า"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ขิง <a href="/ขิง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ตะไคร้ <a href="/ตะไคร้"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>มะนาว <a href="/มะนาว"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบสาระแหน่ <a href="/ใบสาระแหน่"><ion-icon name="reader"></ion-icon></i></a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ยำตะไครใบชะพลู -->
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='image/baichapru.jpg') }}">
+            </div>
+            <div class="about-content">
+                <h1>3. ยําตะไคร้ใบชะพลู</h1>
+                <h2>ประโยชน์</h2>
+                <p>ตะไคร้ <a href="/ตะไคร้"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>หอมแดง <a href="/หอมแดง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ถั่วลิสง <a href="/ถั่วลิสง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบชะพลู <a href="/ใบชะพลู"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบสะระแหน่ <a href="/ใบสะระแหน่"><ion-icon name="reader"></ion-icon></i></a>
+                <p>เม็ดมะม่วงหิมพานต์ <a href="/เม็ดมะม่วงหิมพานต์"><ion-icon name="reader"></ion-icon></i></a>
+                <p>พริกขี้หนูสวน <a href="/พริกขี้หนูสวน"><ion-icon name="reader"></ion-icon></i></a>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- ยำตะไคร้ปลากรอบ -->
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='image/plakrop.jpg') }}">
+            </div>
+            <div class="about-content">
+                <h1>4. ยําตะไคร้ปลากรอบ</h1>
+                <h2>ประโยชน์</h2>
+                <p>ตะไคร้ซอย <a href="/ตะไคร้ซอย"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>หอมแดง <a href="/หอมแดง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>เม็ดมะม่วงหิมพานต์ <a href="/เม็ดมะม่วงหิมพานต์"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ถั่วลิสง <a href="/ถั่วลิสง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบชะพลู<a href="/ใบชะพลู"><ion-icon name="reader"></ion-icon></i></a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ยำแซลมอนสมุนไพร -->
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='image/salmon.jpg') }}">
+            </div>
+            <div class="about-content">
+                <h1>5. ยำแซลมอนสมุนไพร</h1>
+                <h2>ประโยชน์</h2>
+                <p>ตะไคร้ซอย <a href="/ตะไคร้ซอย"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>หอมแดง <a href="/หอมแดง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>กระเทียมหั่นบาง <a href="/กระเทียมหั่นบาง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>พริกสด<a href="/พริกสด"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ผักชีซอย<a href="/ผักชีซอย"><ion-icon name="reader"></ion-icon></i></a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ยำเห็ดออรินจิสมุนไพร -->
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='image/orinjihed.jpg') }}">
+            </div>
+            <div class="about-content">
+                <h1>6. ยำเห็ดออรินจิสมุนไพร</h1>
+                <h2>ประโยชน์</h2>
+                <p>ตะไคร้ซอย <a href="/ตะไคร้ซอย"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>หอมแดง <a href="/หอมแดง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>พริกขี้หนู <a href="/พริกขี้หนู"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ผักชี <a href="/ผักชี"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ผักชีฝรั่ง <a href="/ผักชีฝรั่ง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบสะระแหน่ <a href="/ใบสะระแหน่"><ion-icon name="reader"></ion-icon></i></a>
+            </div>
+        </section>
+    </div>
+
+    <!-- ข้าวยำปลาร้าทรงเครื่อง -->
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='image/plalar.jpg') }}">
+            </div>
+            <div class="about-content">
+                <h1>7. ข้าวยำปลาร้าทรงเครื่อง</h1>
+                <h2>ประโยชน์</h2>
+                <p>ตะไคร้ซอย <a href="/ตะไคร้ซอย"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบมะกรูด <a href="/ใบมะกรูด"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>พริกขี้หนู <a href="/พริกขี้หนู"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>พริกไทย <a href="/พริกไทย"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ถั่วฝักยาว <a href="/ถั่วฝักยาว"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>หอมแดง<a href="/หอมแดง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>มะนาว <a href="/มะนาว"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>แครอท <a href="/แครอท"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>กะหล่ำม่วง <a href="/กะหล่ำม่วง"><ion-icon name="reader"></ion-icon></i></a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ข้าวยำสมุนไพรน้ำกะปิหวาน -->
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='image/kapiwhan.jpg') }}">
+            </div>
+            <div class="about-content">
+                <h1>8. ข้าวยำสมุนไพรน้ำกะปิหวาน</h1>
+                <h2>ประโยชน์</h2>
+                <p>มะพร้าว <a href="/มะพร้าว"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ตะไคร้ <a href="/ตะไคร้"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบมะกรูด <a href="/ใบมะกรูด"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบบัวบก <a href="/ใบบัวบก"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบชะพลู <a href="/ใบชะพลู"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ถั่วงอก <a href="/ถั่วงอก"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ถั่วฝักยาว <a href="/ถั่วฝักยาว"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>มะม่วง <a href="/มะม่วง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>กระเทียม <a href="/กระเทียม"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>หอมแดง <a href="/หอมแดง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ข่า <a href="/ข่า"><ion-icon name="reader"></ion-icon></i></a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ยำปลาทูย่างน้ำพริกเผาสมุนไพร -->
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="{{ url_for('static', filename='image/patooyang.jpg') }}">
+            </div>
+            <div class="about-content">
+                <h1>9. ยำปลาทูย่างน้ำพริกเผาสมุนไพร</h1>
+                <h2>ประโยชน์</h2>
+                <p>ตะไคร้ซอย <a href="/ตะไคร้ซอย"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>พริกขี้หนู <a href="/พริกขี้หนู"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>หอมแดง <a href="/หอมแดง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบมะกรูด <a href="/ใบมะกรูด"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ขิง <a href="/ขิง"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ถั่วฝักยาว <a href="/ถั่วฝักยาว"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ใบสาระแหน่ <a href="/ใบสาระแหน่"><ion-icon name="reader"></ion-icon></i></a></p>
+                <p>ผักกาดหอม <a href="/ผักกาดหอม"><ion-icon name="reader"></ion-icon></i></a></p>
+
+            </div>
+        </section>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
