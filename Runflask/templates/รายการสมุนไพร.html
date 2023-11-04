@@ -53,6 +53,16 @@
         </div>
     </nav>
 
+    <div class="search-container">
+        <div class="search-input-wrapper">
+            <input type="text" id="search-input" placeholder="ค้นหา.." onkeyup="checkEnter(event)">
+        </div>
+        <button id="search-button" onclick="performSearch()">ค้นหา</button>
+    </div>
+    
+
+
+
     <!-- กระเทียม -->
     <div class="container">
         <section class="about">
@@ -1110,6 +1120,12 @@
             </div>
         </section>
     </div>
+
+    <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
 
 
 </body>
