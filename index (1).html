@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar-button {
+            background-color: #555;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .navbar-button:hover {
+            background-color: #777;
+        }
+
+        .ingredient-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .actions a {
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button class="navbar-button"><a href="/">Home</a></button>
+        <button class="navbar-button"><a href="/menu">Menu</a></button>
+        <button class="navbar-button"><a href="/staple">Staple</a></button>
+        <button class="navbar-button"><a href="/usermanagement">User</a></button>
+        <button class="navbar-button">Comments</button>
+    </div>
+    
+    <h1>Menu</h1>
+<!--    <form method="GET" action="/search">
+        <label for="search">Search:</label>
+        <input type="text" name="search" id="search" placeholder="Enter keyword">
+        <button type="submit">
+            <i class="fa-solid fa-search"></i> Search
+        </button>
+    </form>
+-->
+    <div class="ingredient-list">
+        {% for row in rows %}
+        <div class="ingredient-box">
+            <div class="ingredient-number">NO. {{ loop.index }}</div>
+            <div>Menu Name: {{ row[1] }}</div>
+            <div>Type: {{ row[2] }}</div>
+            <div>Ingredient: {{ row[3] }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

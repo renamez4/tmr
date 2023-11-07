@@ -13,8 +13,10 @@ config = {
 app = Flask(__name__)
 
 
+
 def get_db_connection():
     return mysql.connector.connect(**config)
+
 
 
 @app.route('/')
@@ -24,14 +26,14 @@ def index():
         cursor = connection.cursor()
 
         # เราใช้คำสั่ง SQL เพื่อดึงข้อมูลทั้งหมดจากตาราง menu
-        select_query = "SELECT * FROM menu"
+        select_query = "SELECT * FROM menu_staple"
         cursor.execute(select_query)
         all_rows = cursor.fetchall()
 
-        # สุ่มเลือก 5 รายการจากข้อมูลทั้งหมด
-        # random_rows = random.sample(all_rows, 2)
+        # สุ่มเมนูและเลือกให้มีจำนวนเมนูตามที่คุณต้องการ (ในที่นี้คือ 6) โดยไม่ซ้ำกัน
+        random_rows = random.sample(all_rows, 6)
 
-        return render_template('index.html')
+        return render_template('index.html', rows=random_rows)
 
     except mysql.connector.Error as e:
         return f"Error: {e}"
@@ -41,30 +43,39 @@ def index():
             cursor.close()
             connection.close()
 
-            
+@app.route('/nameofmenu')
+def nameofmenu():
+    try:
+        connection = get_db_connection()
+        cursor = connection.cursor()
+
+        # เราใช้คำสั่ง SQL เพื่อดึงข้อมูลทั้งหมดจากตาราง menu
+        select_query = "SELECT * FROM menu_staple"
+        cursor.execute(select_query)
+        all_rows = cursor.fetchall()
+
+        return render_template('nameofmenu.html', rows=all_rows)
+
+    except mysql.connector.Error as e:
+        return f"Error: {e}"
+
+    finally:
+        if 'connection' in locals() and connection.is_connected():
+            cursor.close()
+            connection.close()
+
 @app.route('/รายการสมุนไพร')
 def รายการสมุนไพร():
     try:
         connection = get_db_connection()
         cursor = connection.cursor()
 
-        sort = request.args.get('sort', 'list_id')
-        order = request.args.get('order', 'asc')
-        page = int(request.args.get('page', 1))  # รับค่า 'page' จาก URL parameter
-        per_page = 25  # จำนวนรายการต่อหน้า
+        # เราใช้คำสั่ง SQL เพื่อดึงข้อมูลทั้งหมดจากตาราง menu
+        select_query = "SELECT * FROM staple_list"
+        cursor.execute(select_query)
+        all_rows = cursor.fetchall()
 
-        offset = (page - 1) * per_page
-
-        select_query = f"SELECT * FROM staple_list ORDER BY {sort} {order} LIMIT %s OFFSET %s"
-        cursor.execute(select_query, (per_page, offset))
-        rows = cursor.fetchall()
-
-        cursor.execute("SELECT COUNT(*) FROM staple_list")
-        total_rows = cursor.fetchone()[0]
-
-        num_pages = (total_rows + per_page - 1) // per_page
-
-        return render_template('รายการสมุนไพร.html', rows=rows, page=page, num_pages=num_pages, sort=sort, order=order)
+        return render_template('รายการสมุนไพร.html', rows=all_rows)
 
     except mysql.connector.Error as e:
         return f"Error: {e}"
@@ -75,18 +86,75 @@ def รายการสมุนไพร():
             connection.close()
 
 
+# @app.route('/รายการสมุนไพร')
+# def รายการสมุนไพร():
+#     try:
+#         connection = get_db_connection()
+#         cursor = connection.cursor()
+
+#         sort = request.args.get('sort', 'list_id')
+#         order = request.args.get('order', 'asc')
+#         page = int(request.args.get('page', 1))  # รับค่า 'page' จาก URL parameter
+#         per_page = 25  # จำนวนรายการต่อหน้า
+
+#         offset = (page - 1) * per_page
+
+#         select_query = f"SELECT * FROM staple_list ORDER BY {sort} {order} LIMIT %s OFFSET %s"
+#         cursor.execute(select_query, (per_page, offset))
+#         rows = cursor.fetchall()
+
+#         cursor.execute("SELECT COUNT(*) FROM staple_list")
+#         total_rows = cursor.fetchone()[0]
+
+#         num_pages = (total_rows + per_page - 1) // per_page
+
+#         return render_template('รายการสมุนไพร.html', rows=rows, page=page, num_pages=num_pages, sort=sort, order=order)
+
+#     except mysql.connector.Error as e:
+#         return f"Error: {e}"
+
+#     finally:
+#         if 'connection' in locals() and connection.is_connected():
+#             cursor.close()
+#             connection.close()
+
+#search 
+# @app.route('/searchstaple', methods=['GET'])
+# def search_staple():
+#     try:
+#         connection = get_db_connection()
+#         cursor = connection.cursor()
+
+#         search_query = request.args.get('search')
+#         if search_query:
+#             # Modify the SELECT query to include a WHERE clause for searching
+#             select_query = "SELECT * FROM staple_list WHERE staple_name LIKE %s OR advantage LIKE %s"
+#             cursor.execute(select_query, ('%' + search_query + '%', '%' + search_query + '%'))
+#         else:
+#             # If no search query provided, retrieve all records
+#             select_query = "SELECT * FROM staple_list"
+#             cursor.execute(select_query)
+
+#         rows = cursor.fetchall()
+
+#         return render_template('staple_menu.html', rows=rows)
+
+#     except mysql.connector.Error as e:
+#         return f"Error: {e}"
+
+#     finally:
+#         if 'connection' in locals() and connection.is_connected():
+#             cursor.close()
+#             connection.close()
+
 # @app.route('/')
 # def index():
 #     return render_template('index.html')
 
-@app.route('/Home')
-def home():
-    return render_template('index.html')
 
-
-@app.route('/nameofmenu')
-def nameofmenu():
-    return render_template('nameofmenu.html')
+# @app.route('/nameofmenu')
+# def nameofmenu():
+#     return render_template('nameofmenu.html')
 
 
 @app.route('/menupad')
@@ -234,9 +302,9 @@ def ใบมะกรูด():
     return render_template('ใบมะกรูด.html')
 
 
-@app.route('/ใบสาระแหน่')
+@app.route('/ใบสะระแหน่')
 def ใบสาระแหน่():
-    return render_template('ใบสาระแหน่.html')
+    return render_template('ใบสะระแหน่.html')
 
 
 @app.route('/ใบโหระพา')
